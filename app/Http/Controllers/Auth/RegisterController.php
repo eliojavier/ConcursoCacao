@@ -6,6 +6,7 @@ use App\User;
 use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use DateTime;
 
 class RegisterController extends Controller
 {
@@ -48,9 +49,18 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => 'required|max:255',
+            'nombre' => 'required|max:255',
+            'apellido' => 'required|max:255',
             'email' => 'required|email|max:255|unique:users',
+            'cedula' => 'required|max:15',
             'password' => 'required|min:6|confirmed',
+            'fecha_nacimiento' => 'required',
+            'telefono' => 'required',
+            'estado' => 'required',
+            'talla' => 'required',
+            'categoria' => 'required',
+            'academia' => 'required',
+            'tipo' => 'required',
         ]);
     }
 
@@ -63,9 +73,21 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         return User::create([
-            'name' => $data['name'],
+            'nombre' => $data['nombre'],
+            'apellido' => $data['apellido'],
             'email' => $data['email'],
+            'cedula' => $data['cedula'],
             'password' => bcrypt($data['password']),
+            'fecha_nacimiento' => DateTime::createFromFormat('d/m/Y', $data['fecha_nacimiento'])->format('Y-m-d'),
+            'telefono' => $data['telefono'],
+            'direccion' => $data['direccion'],
+            'twitter' => $data['twitter'],
+            'instagram' => $data['instagram'],
+            'talla' => $data['talla'],
+            'categoria' => $data['categoria'],
+            'tipo' => $data['tipo'],
+            'lugar_id' => $data['estado'],
+            'academia_id' => $data['academia'],
         ]);
     }
 }

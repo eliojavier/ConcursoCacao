@@ -12,7 +12,7 @@
 
 <div class="row">
     <div class="col-md-6">
-        <div class="form-group autocomplete-suggestion">
+        <div class="form-group">
             {!! Form::label('ingrediente', 'Ingrediente', ['class' => 'col-md-4 control-label']) !!}
             <div class="col-md-7">
                 {!! Form::text('ingrediente', null, ['class' => 'form-control', 'placeholder'=>'e.g. ']) !!}

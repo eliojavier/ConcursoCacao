@@ -16,7 +16,7 @@ class IngredientesController extends Controller
      */
     public function index()
     {
-        $ingredientes = Ingrediente::pluck('nombre', 'id');
+        $ingredientes = Ingrediente::all();
         dd (json_encode($ingredientes));
     }
 

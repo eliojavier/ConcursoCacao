@@ -1,32 +1,20 @@
-$(document).ready(function(){
-    var ingredientes = [
-        { value: 'Andorra', data: 'AD' },
-        { value: 'Zimbabwe', data: 'ZZ' },
-        { value: 'Venezuela', data: 'VE' },
-        { value: 'Colombia', data: 'CO' }
-    ];
-
+// $(document).ready(function(){
+//     $('#ingrediente').autocomplete({
+//         serviceUrl: './ingredientes',
+//         onSelect: function (suggestion) {
+//             alert('You selected: ' + suggestion.value + ', ' + suggestion.data);
+//         }
+//     });
+// });
+$(document).ready(function() {
     $('#ingrediente').autocomplete({
-        lookup: ingredientes,
-        onSelect: function (suggestion) {
-            alert('You selected: ' + suggestion.value + ', ' + suggestion.data);
+        paramName: './ingredientes',
+        transformResult: function (response) {
+            return {
+                suggestions: $.map(response.myData, function (dataItem) {
+                    return {value: dataItem.id, data: dataItem.nombre};
+                })
+            };
         }
     });
 });
-
-// $( function() {
-//     function log( message ) {
-//         $( "<div>" ).text( message ).prependTo( "#log" );
-//         $( "#log" ).scrollTop( 0 );
-//     }
-//
-//     $( "#ingredientes" ).autocomplete({
-//         source: "ingredientes",
-//         minLength: 2,
-//         select: function( event, ui ) {
-//             log( ui.item ?
-//             "Selected: " + ui.item.value + " aka " + ui.item.id :
-//             "Nothing selected, input was " + this.value );
-//         }
-//     });
-// } );

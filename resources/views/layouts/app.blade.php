@@ -12,6 +12,7 @@
 
     <!-- Styles -->
     <link href="/css/app.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="all" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/smoothness/jquery-ui.css"    />
 
     <!-- Scripts -->
     <script>
@@ -82,10 +83,10 @@
 
     <!-- Scripts -->
     <script src="{{asset('/js/app.js')}}" ></script>
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+    <script src="{{asset('/js/jquery-1.12.4.js')}}" ></script>
+    <script src="{{asset('/js/jquery-ui.js')}}" ></script>
+    <script src="{{asset('/js/datepicker.js')}}" ></script>
     <script src="{{asset('/js/cargar_ingredientes.js')}}" ></script>
-    <script src="{{asset('/js/jquery.autocomplete.js')}}" ></script>
     {{--<script src="/js/app.js"></script>--}}
     {{--<script src="/js/cargar_ingredientes.js"></script>--}}
     {{--<script src="/js/jquery.autocomplete.js" ></script>--}}
