@@ -34,7 +34,7 @@
     {!! Form::label('password', 'Contraseña', ['class' => 'col-md-4 control-label']) !!}
 
     <div class="col-md-6">
-        {!! Form::text('password', old('password'), ['class' => 'form-control', 'placeholder'=>'Contraseña', 'autofocus']) !!}
+        {!! Form::password('password', old('password'), ['class' => 'form-control', 'placeholder'=>'Contraseña', 'autofocus']) !!}
     </div>
 </div>
 
@@ -42,7 +42,7 @@
     {!! Form::label('password_confirmation', 'Confirmar contraseña', ['class' => 'col-md-4 control-label']) !!}
 
     <div class="col-md-6">
-        {!! Form::text('password_confirmation', old('password_confirmation'), ['class' => 'form-control', 'placeholder'=>'Confirmar contraseña', 'autofocus']) !!}
+        {!! Form::password('password_confirmation', old('password_confirmation'), ['class' => 'form-control', 'placeholder'=>'Confirmar contraseña', 'autofocus']) !!}
     </div>
 </div>
 

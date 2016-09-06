@@ -28,3 +28,4 @@ Route::resource('ingredientes', 'IngredientesController');
 //modulo de administración
 Route::get('/admin', 'AdminController@index');
 Route::get('/admin/usuarios/participantes', 'AdminController@participantes');
+Route::get('/admin/reportes/participantesporestado', 'AdminController@participantesPorEstado');
