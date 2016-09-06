@@ -17,13 +17,14 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::resource('usuarios', 'UsuariosController');
-
 Route::get('/home', 'HomeController@index');
+
+
+Route::resource('usuarios', 'UsuariosController');
 
 Route::resource('recetas', 'RecetasController');
 Route::resource('ingredientes', 'IngredientesController');
 
-Auth::routes();
-
-Route::get('/home', 'HomeController@index');
+//modulo de administración
+Route::get('/admin', 'AdminController@index');
+Route::get('/admin/usuarios/participantes', 'AdminController@participantes');

@@ -10,4 +10,9 @@ class Lugar extends Model
     {
         return ucfirst($value);
     }
+
+    public function users()
+    {
+        return $this->hasMany('App\User');
+    }
 }
