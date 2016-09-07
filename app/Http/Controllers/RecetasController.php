@@ -51,7 +51,7 @@ class RecetasController extends Controller
             $ingrediente->nombre = $lista_ingredientes[$i];
             $ingrediente->save();
             $lastInsertId = $ingrediente->id;
-            echo($lastInsertId);
+            
         }
 
 
