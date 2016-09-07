@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Lugar;
+use App\Receta;
 use App\User;
 use Illuminate\Http\Request;
 
@@ -20,6 +21,13 @@ class AdminController extends Controller
         $participantes = User::all();
 
         return view ('admin/usuarios/participantes', compact('participantes'));
+    }
+
+    public function recetas()
+    {
+        $recetas = Receta::all();
+
+        return view ('admin/recetas/recetas', compact('recetas'));
     }
 
     public function participantesPorEstado()

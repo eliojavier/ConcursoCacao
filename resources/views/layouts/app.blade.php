@@ -20,6 +20,9 @@
             'csrfToken' => csrf_token(),
         ]); ?>
     </script>
+    <script src="{{asset('/js/jquery-1.12.4.js')}}" ></script>
+    <script src="{{asset('/js/jquery-ui.js')}}" ></script>
+    <script src="{{asset('/js/datepicker.js')}}" ></script>
 
 </head>
 <body>
@@ -82,11 +85,9 @@
     @yield('content')
 
     <!-- Scripts -->
-    <script src="{{asset('/js/app.js')}}" ></script>
-    <script src="{{asset('/js/jquery-1.12.4.js')}}" ></script>
-    <script src="{{asset('/js/jquery-ui.js')}}" ></script>
-    <script src="{{asset('/js/datepicker.js')}}" ></script>
-    <script src="{{asset('/js/cargar_ingredientes.js')}}" ></script>
+    {{--<script src="{{asset('/js/app.js')}}" ></script>--}}
+
+    {{--<script src="{{asset('/js/cargar_ingredientes.js')}}" ></script>--}}
     {{--<script src="/js/app.js"></script>--}}
     {{--<script src="/js/cargar_ingredientes.js"></script>--}}
     {{--<script src="/js/jquery.autocomplete.js" ></script>--}}

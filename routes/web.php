@@ -26,6 +26,7 @@ Route::resource('recetas', 'RecetasController');
 Route::resource('ingredientes', 'IngredientesController');
 
 //modulo de administración
-Route::get('/admin', 'AdminController@index');
-Route::get('/admin/usuarios/participantes', 'AdminController@participantes');
-Route::get('/admin/reportes/participantesporestado', 'AdminController@participantesPorEstado');
+Route::get('admin', 'AdminController@index');
+Route::get('admin/usuarios/participantes', 'AdminController@participantes');
+Route::get('admin/recetas/recetas', 'AdminController@recetas');
+Route::get('admin/reportes/participantesporestado', 'AdminController@participantesPorEstado');
