@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class RecetasController extends Controller
 {
@@ -34,41 +35,41 @@ class RecetasController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        $this->validate($request,[
+        $this->validate($request, [
             'nombre' => 'required',
             'modalidad' => 'required',
         ]);
 
+        $receta = new Receta();
+        $receta->nombre = $request->nombre;
+        $receta->modalidad = $request->modalidad;
+        $receta->user_id = Auth::user()->id;
+        $receta->save();
+        $receta_id = $receta->id;
+
         $lista_ingredientes = explode(".", $request->ingredientes);
-        for ($i=0; $i<count($lista_ingredientes) - 1; $i++)
-        {
+        for ($i = 0; $i < count($lista_ingredientes) - 1; $i++) {
             $ingrediente = new Ingrediente();
             $ingrediente->nombre = $lista_ingredientes[$i];
             $ingrediente->save();
-            $lastInsertId = $ingrediente->id;
-            
+            $ingrediente_id = $ingrediente->id;
+
+            DB::table('ingrediente_receta')->insert(
+                ['ingrediente_id' => $ingrediente_id,
+                    'receta_id' => $receta_id]
+            );
         }
-
-
-//        $receta = new Receta();
-//        $receta->nombre = $request->nombre;
-//        $receta->modalidad = $request->modalidad;
-//        $receta->user_id = Auth::user()->id;
-//
-//
-//
-//        $receta->save();
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -79,7 +80,7 @@ class RecetasController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -90,8 +91,8 @@ class RecetasController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \Illuminate\Http\Request $request
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -102,7 +103,7 @@ class RecetasController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
