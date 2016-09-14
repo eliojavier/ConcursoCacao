@@ -11,29 +11,29 @@ class LugarsTablesSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('lugars')->insert(['nombre' => 'amazonas']);
-        DB::table('lugars')->insert(['nombre' => 'anzoategui']);
-        DB::table('lugars')->insert(['nombre' => 'apure']);
-        DB::table('lugars')->insert(['nombre' => 'aragua']);
-        DB::table('lugars')->insert(['nombre' => 'barinas']);
-        DB::table('lugars')->insert(['nombre' => 'bolívar']);
-        DB::table('lugars')->insert(['nombre' => 'carabobo']);
-        DB::table('lugars')->insert(['nombre' => 'cojedes']);
-        DB::table('lugars')->insert(['nombre' => 'delta amacuro']);
-        DB::table('lugars')->insert(['nombre' => 'distrito capital']);
-        DB::table('lugars')->insert(['nombre' => 'falcón']);
-        DB::table('lugars')->insert(['nombre' => 'guárico']);
-        DB::table('lugars')->insert(['nombre' => 'lara']);
-        DB::table('lugars')->insert(['nombre' => 'miranda']);
-        DB::table('lugars')->insert(['nombre' => 'monagas']);
-        DB::table('lugars')->insert(['nombre' => 'mérida']);
-        DB::table('lugars')->insert(['nombre' => 'nueva esparta']);
-        DB::table('lugars')->insert(['nombre' => 'portuguesa']);
-        DB::table('lugars')->insert(['nombre' => 'sucre']);
-        DB::table('lugars')->insert(['nombre' => 'trujillo']);
-        DB::table('lugars')->insert(['nombre' => 'táchira']);
-        DB::table('lugars')->insert(['nombre' => 'vargas']);
-        DB::table('lugars')->insert(['nombre' => 'yaracuy']);
-        DB::table('lugars')->insert(['nombre' => 'zulia']);
+        DB::table('lugars')->insert(['nombre' => 'Amazonas']);
+        DB::table('lugars')->insert(['nombre' => 'Anzoategui']);
+        DB::table('lugars')->insert(['nombre' => 'Apure']);
+        DB::table('lugars')->insert(['nombre' => 'Aragua']);
+        DB::table('lugars')->insert(['nombre' => 'Barinas']);
+        DB::table('lugars')->insert(['nombre' => 'Bolívar']);
+        DB::table('lugars')->insert(['nombre' => 'Carabobo']);
+        DB::table('lugars')->insert(['nombre' => 'Cojedes']);
+        DB::table('lugars')->insert(['nombre' => 'Delta amacuro']);
+        DB::table('lugars')->insert(['nombre' => 'Distrito capital']);
+        DB::table('lugars')->insert(['nombre' => 'Falcón']);
+        DB::table('lugars')->insert(['nombre' => 'Guárico']);
+        DB::table('lugars')->insert(['nombre' => 'Lara']);
+        DB::table('lugars')->insert(['nombre' => 'Miranda']);
+        DB::table('lugars')->insert(['nombre' => 'Monagas']);
+        DB::table('lugars')->insert(['nombre' => 'Mérida']);
+        DB::table('lugars')->insert(['nombre' => 'Nueva Esparta']);
+        DB::table('lugars')->insert(['nombre' => 'Portuguesa']);
+        DB::table('lugars')->insert(['nombre' => 'Sucre']);
+        DB::table('lugars')->insert(['nombre' => 'Trujillo']);
+        DB::table('lugars')->insert(['nombre' => 'Táchira']);
+        DB::table('lugars')->insert(['nombre' => 'Vargas']);
+        DB::table('lugars')->insert(['nombre' => 'Yaracuy']);
+        DB::table('lugars')->insert(['nombre' => 'Zulia']);
     }
 }

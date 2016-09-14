@@ -85,7 +85,16 @@ class RecetasController extends Controller
      */
     public function edit($id)
     {
-        //
+        $receta = Receta::findOrFail($id);
+        $lista_ingredientes = $receta->ingredientes;
+
+        foreach ($lista_ingredientes as $ingrediente){
+            
+        }
+
+        $ingredientes = $lista_ingredientes->nombre;
+        echo $ingredientes;
+        //return view ('recetas/edit', compact('receta'));
     }
 
     /**
@@ -97,7 +106,9 @@ class RecetasController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $receta = Receta::findOrFail($id);
+        $receta->update($request->all());
+        return redirect ('/');
     }
 
     /**
