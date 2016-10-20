@@ -8,6 +8,6 @@ class Receta extends Model
 {
     public function ingredientes()
     {
-        return $this->belongsToMany('App\Ingrediente');
+        return $this->belongsToMany(Ingrediente::class);
     }
 }

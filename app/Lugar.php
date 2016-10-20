@@ -13,12 +13,12 @@ class Lugar extends Model
 
     public function users()
     {
-        return $this->hasMany('App\User');
+        return $this->hasMany(User::class);
     }
 
     public function usersCountRelation()
     {
-        return $this->hasOne('App\User')->selectRaw('lugar_id, count(*) as count')->groupBy('lugar_id');
+        return $this->hasOne(User::class)->selectRaw('lugar_id, count(*) as count')->groupBy('lugar_id');
         // replace module_id with appropriate foreign key if needed
     }
 

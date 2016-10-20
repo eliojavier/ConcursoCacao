@@ -32,11 +32,11 @@ class User extends Authenticatable
 
     public function lugar()
     {
-        return $this->belongsTo('App\Lugar');
+        return $this->belongsTo(Lugar::class);
     }
 
     public function academia()
     {
-        return $this->belongsTo('App\Academia');
+        return $this->belongsTo(Academia::class);
     }
 }

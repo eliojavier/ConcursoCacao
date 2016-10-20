@@ -45,24 +45,27 @@ class RecetasController extends Controller
             'modalidad' => 'required',
         ]);
 
+        //se guarda la receta
         $receta = new Receta();
         $receta->nombre = $request->nombre;
         $receta->modalidad = $request->modalidad;
         $receta->user_id = Auth::user()->id;
         $receta->save();
-        $receta_id = $receta->id;
 
         $lista_ingredientes = explode(".", $request->ingredientes);
         for ($i = 0; $i < count($lista_ingredientes) - 1; $i++) {
-            $ingrediente = new Ingrediente();
-            $ingrediente->nombre = $lista_ingredientes[$i];
-            $ingrediente->save();
-            $ingrediente_id = $ingrediente->id;
+            $busqueda = Ingrediente:: where('nombre', $lista_ingredientes[$i])->first(['id']);
 
-            DB::table('ingrediente_receta')->insert(
-                ['ingrediente_id' => $ingrediente_id,
-                    'receta_id' => $receta_id]
-            );
+            if(!$busqueda){
+                $ingrediente = new Ingrediente();
+                $ingrediente->nombre = $lista_ingredientes[$i];
+                $ingrediente->save();
+
+                $receta->ingredientes()->attach($ingrediente->id);
+            }
+            else{
+                $receta->ingredientes()->attach($busqueda->id);
+            }
         }
     }
 
