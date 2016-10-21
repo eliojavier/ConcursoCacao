@@ -29,7 +29,8 @@ class RecetasController extends Controller
      */
     public function create()
     {
-        return view('recetas.create');
+        $ingredientes = Ingrediente::pluck('id', 'nombre');
+        return view('recetas.create', compact('ingredientes'));
     }
 
     /**
@@ -48,6 +49,8 @@ class RecetasController extends Controller
         //se guarda la receta
         $receta = new Receta();
         $receta->nombre = $request->nombre;
+        $receta->preparacion = $request->preparacion;
+        $receta->raciones = $request->raciones;
         $receta->modalidad = $request->modalidad;
         $receta->user_id = Auth::user()->id;
         $receta->save();

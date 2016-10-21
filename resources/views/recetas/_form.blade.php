@@ -39,9 +39,9 @@
 </div>
 
 <div class="form-group">
-    {!! Form::label('preparacion', 'Preparacion', ['class' => 'col-md-2 control-label']) !!}
+    {!! Form::label('preparacion', 'Preparación', ['class' => 'col-md-2 control-label']) !!}
     <div class="col-md-8">
-        {!! Form::textarea('preparacion', old('preparacion'), ['class' => 'form-control', 'placeholder'=>'Preparacion']) !!}
+        {!! Form::textarea('preparacion', old('preparacion'), ['class' => 'form-control', 'placeholder'=>'Preparación']) !!}
     </div>
 </div>
 
