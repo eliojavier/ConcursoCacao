@@ -134,12 +134,15 @@
                     <a href="#" data-toggle="collapse" data-target="#acciones"><i class="fa fa-line-chart"></i> Usuarios <i class="fa fa-fw fa-caret-down"></i></a>
                     <ul id="acciones" class="collapse">
                         <li>
-                            <a href="{{URL::to('admin/usuarios/participantes')}}"><i class="fa fa-fw fa-edit"></i> Participantes </a>
+                            <a href="{{URL::to('admin/participantes')}}"><i class="fa fa-fw fa-edit"></i> Participantes </a>
                         </li>
                         <li>
                             <a href="{{URL::to('admin/usuarios/jueces')}}"><i class="fa fa-fw fa-table"></i>Jueces</a>
                         </li>
                     </ul>
+                </li>
+                <li>
+                    <a href="{{ url('admin/jueces') }}"> Jueces </a>
                 </li>
                 <li>
                     <a href="#" data-toggle="collapse" data-target="#prestamos"> Recetas <i class="fa fa-fw fa-caret-down"></i></a>

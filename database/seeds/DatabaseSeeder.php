@@ -15,5 +15,7 @@ class DatabaseSeeder extends Seeder
         $this->call(AcademiasTableSeeder::class);
         $this->call(UsersTableSeeder::class);
         $this->call(IngredientesTableSeeder::class);
+
+        factory('App\Judge', 5)->create();
     }
 }

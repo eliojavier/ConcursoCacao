@@ -27,8 +27,11 @@ Route::resource('ingredientes', 'IngredientesController');
 
 //modulo de administración
 Route::get('admin', 'AdminController@index');
-Route::resource('admin/criterios', 'CriteriosController');
-Route::resource('admin/votaciones', 'VotacionesController');
-Route::get('admin/usuarios/participantes', 'AdminController@participantes');
-Route::get('admin/recetas/recetas', 'AdminController@recetas');
-Route::get('admin/reportes/participantesporestado', 'AdminController@participantesPorEstado');
+Route::resource('admin/jueces', 'JudgeController');
+Route::resource('admin/participantes', 'ParticipantController');
+
+//Route::resource('admin/criterios', 'CriteriosController');
+//Route::resource('admin/votaciones', 'VotacionesController');
+//Route::get('admin/usuarios/participantes', 'AdminController@participantes');
+//Route::get('admin/recetas/recetas', 'AdminController@recetas');
+//Route::get('admin/reportes/participantesporestado', 'AdminController@participantesPorEstado');
