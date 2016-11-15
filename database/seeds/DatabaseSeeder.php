@@ -11,10 +11,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call(LugarsTablesSeeder::class);
-        $this->call(AcademiasTableSeeder::class);
+        $this->call(CitiesTableSeeder::class);
+        $this->call(AcademiesTableSeeder::class);
         $this->call(UsersTableSeeder::class);
-        $this->call(IngredientesTableSeeder::class);
+        $this->call(IngredientsTableSeeder::class);
 
         factory('App\Judge', 5)->create();
     }

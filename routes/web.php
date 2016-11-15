@@ -25,10 +25,14 @@ Route::resource('usuarios', 'UsuariosController');
 Route::resource('recetas', 'RecetasController');
 Route::resource('ingredientes', 'IngredientesController');
 
-//modulo de administración
-Route::get('admin', 'AdminController@index');
-Route::resource('admin/jueces', 'JudgeController');
-Route::resource('admin/participantes', 'ParticipantController');
+
+
+Route::group(['prefix' => 'admin'], function () {
+    Route::get('/', 'AdminController@index');
+    Route::resource('jueces', 'JudgeController');
+    Route::resource('participantes', 'ParticipantController');
+    Route::resource('recipes', 'RecipeController');
+});
 
 //Route::resource('admin/criterios', 'CriteriosController');
 //Route::resource('admin/votaciones', 'VotacionesController');

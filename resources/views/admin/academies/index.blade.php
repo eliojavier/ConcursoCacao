@@ -4,8 +4,8 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-1">
-                <button type="button" data-toggle="modal" data-target="#crear-juez" class="btn btn-primary">
-                    Agregar juez
+                <button type="button" data-toggle="modal" data-target="#crear-academia" class="btn btn-primary">
+                    Agregar academia
                 </button>
             </div>
          </div>
@@ -16,7 +16,7 @@
                         <thead>
                         <tr>
                             <th>Nombre</th>
-                            <th>Email</th>
+                            <th>País</th>
                             <th>Teléfono</th>
                             <th>Acciones</th>
                         </tr>

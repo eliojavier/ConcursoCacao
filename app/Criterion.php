@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Juez extends Model
+class Criterion extends Model
 {
     //
 }

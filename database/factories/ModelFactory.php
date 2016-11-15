@@ -27,6 +27,32 @@ $factory->define(App\Judge::class, function (Faker\Generator $faker) {
     return [
         'name' => $faker->name,
         'email' => $faker->safeEmail,
-        'phone' => $faker->phoneNumber,
+        'phone' => $faker->e164PhoneNumber,
     ];
 });
+
+$factory->define(App\User::class, function (Faker\Generator $faker) {
+
+    return [
+        'name' => $faker->firstName,
+        'last_name' => $faker->lastName,
+        'email' => $faker->safeEmail,
+        'doc_id' => $faker->ean8,
+        'password' => $faker->bcrypt('123456'),
+        'birthday' => $faker->date,
+        'phone' => $faker->e164PhoneNumber,
+        'address' => $faker->address,
+        'twitter' => $faker->firstName,
+        'instagram' => $faker->firstName,
+        'size' => $faker->firstName,
+    ];
+});
+
+DB::table('users')->insert([
+
+    'size' => 'M',
+    'category' => 'Estudiante/Profesional',
+    'type' => 'N/A',
+    'city_id' => 1,
+    'academy_id' => 1,
+]);

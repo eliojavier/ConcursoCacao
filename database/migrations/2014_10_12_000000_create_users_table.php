@@ -15,25 +15,26 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nombre');
-            $table->string('apellido');
+            $table->string('name');
+            $table->string('last_name');
             $table->string('email')->unique();
-            $table->string('cedula');
+            $table->string('doc_id');
             $table->string('password', 60);
-            $table->date('fecha_nacimiento');
-            $table->string('telefono');
-            $table->string('direccion')->nullable();
+            $table->date('birthday');
+            $table->string('phone');
+            $table->string('address')->nullable();
             $table->string('twitter')->nullable();
             $table->string('instagram')->nullable();
-            $table->string('talla');
-            $table->string('categoria');
-            $table->string('tipo');
-            $table->unsignedInteger('lugar_id');
-            $table->unsignedInteger('academia_id');
+            $table->string('size');
+            $table->string('category');
+            $table->string('type');
+            $table->unsignedInteger('city_id');
+            $table->unsignedInteger('academy_id');
             $table->rememberToken();
             $table->timestamps();
 
-            $table->foreign('lugar_id')->references('id')->on('lugars')->onDelete('cascade');
+            $table->foreign('city_id')->references('id')->on('cities')->onDelete('cascade');
+            $table->foreign('academy_id')->references('id')->on('academies')->onDelete('cascade');
         });
     }
 

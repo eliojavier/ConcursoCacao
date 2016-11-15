@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateRecetasTable extends Migration
+class CreateCriteriaTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,9 @@ class CreateRecetasTable extends Migration
      */
     public function up()
     {
-        Schema::create('recetas', function (Blueprint $table) {
+        Schema::create('criteria', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nombre');
-            $table->string('modalidad')->nullable();
-            $table->longText('preparacion')->nullable();
-            $table->integer('raciones')->nullable();
-            $table->string('imagen')->nullable();
-            $table->unsignedInteger('user_id');
+            $table->string('criterion');
             $table->timestamps();
         });
     }
@@ -32,6 +27,6 @@ class CreateRecetasTable extends Migration
      */
     public function down()
     {
-        Schema::drop('recetas');
+        Schema::drop('criteria');
     }
 }

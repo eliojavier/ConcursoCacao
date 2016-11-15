@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Ingrediente;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
-class IngredientesController extends Controller
+class CriterionController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +15,7 @@ class IngredientesController extends Controller
      */
     public function index()
     {
-        $ingredientes = Ingrediente::all();
-        dd (json_encode($ingredientes));
+        //
     }
 
     /**

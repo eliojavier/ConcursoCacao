@@ -19,6 +19,7 @@
     <!-- Custom CSS -->
     <link href="{{ asset('/css/mycss.css') }}" rel="stylesheet">
     <link href="{{ asset('/css/sb-admin.css') }}" rel="stylesheet">
+    <link href="{{ asset('/css/custom.css') }}" rel="stylesheet">
 
     <!-- Morris Charts CSS -->
     <link href="{{ asset('/css/plugins/morris.css') }}" rel="stylesheet">

@@ -2,10 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\JudgeRequest;
 use App\Judge;
+use Exception;
+use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use PDOException;
 
 class JudgeController extends Controller
 {
@@ -33,12 +37,25 @@ class JudgeController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param JudgeRequest $request
      * @return \Illuminate\Http\Response
+     * @internal param $ |Request $request
      */
-    public function store(Request $request)
+    public function store(JudgeRequest $request)
     {
-        //
+        try{
+            Judge::create($request->all());
+            return redirect ('admin/jueces');
+        }
+        catch(QueryException $e){
+            return $e->getMessage();
+        }
+        catch(PDOException $e){
+            return $e->getMessage();
+        }
+        catch(Exception $e){
+            return $e->getMessage();
+        }
     }
 
     /**
@@ -66,13 +83,26 @@ class JudgeController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param JudgeRequest|Request $request
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(JudgeRequest $request, $id)
     {
-        //
+        try{
+            $judge = Judge::findOrFail($id);
+            $judge->update($request->all());
+            return redirect ('admin/jueces');
+        }
+        catch(QueryException $e){
+            return $e->getMessage();
+        }
+        catch(PDOException $e){
+            return $e->getMessage();
+        }
+        catch(Exception $e){
+            return $e->getMessage();
+        }
     }
 
     /**

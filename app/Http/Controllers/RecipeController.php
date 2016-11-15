@@ -10,7 +10,7 @@ use App\Http\Requests;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
-class RecetasController extends Controller
+class RecipeController extends Controller
 {
     /**
      * Display a listing of the resource.

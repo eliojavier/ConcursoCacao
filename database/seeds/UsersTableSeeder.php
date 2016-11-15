@@ -12,21 +12,21 @@ class UsersTableSeeder extends Seeder
     public function run()
     {
         DB::table('users')->insert([
-            'nombre' => 'Elio',
-            'apellido' => 'Acosta',
+            'name' => 'Elio',
+            'last_name' => 'Acosta',
             'email' => 'eliojavier86@gmail.com',
-            'cedula' => '17146579',
+            'doc_id' => '17146579',
             'password' => bcrypt(123456),
-            'fecha_nacimiento' => DateTime::createFromFormat('d/m/Y', '29/01/1986')->format('Y-m-d'),
-            'telefono' => '04261058185',
-            'direccion' => 'San Martín',
+            'birthday' => DateTime::createFromFormat('d/m/Y', '29/01/1986')->format('Y-m-d'),
+            'phone' => '04261058185',
+            'address' => 'San Martín',
             'twitter' => 'eliojavier',
             'instagram' => 'eliojavier',
-            'talla' => 'M',
-            'categoria' => 'Estudiante/Profesional',
-            'tipo' => 'N/A',
-            'lugar_id' => 1,
-            'academia_id' => 1,
+            'size' => 'M',
+            'category' => 'Estudiante/Profesional',
+            'type' => 'N/A',
+            'city_id' => 1,
+            'academy_id' => 1,
         ]);
     }
 }
